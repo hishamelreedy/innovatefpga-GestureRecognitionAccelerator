@@ -1,0 +1,668 @@
+{
+  "columns":
+  ["", "Pipelined", "II", "Bottleneck", "Details"]
+  , "children":
+  [
+    {
+      "name":"Kernel: maxpool2d"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+            , "line":9
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"maxpool2d.B1"
+          , "data":
+          ["Yes", "163503904", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":16
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":16
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 147"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 147"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Coalesced loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":18
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Auto-coalesced"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"maxpool2d.B2"
+              , "data":
+              ["No", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":25
+                  }
+                ]
+                , [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":25
+                  }
+                ]
+                , [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":28
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 141"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 141"
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"Fully unrolled loop"
+                  , "data":
+                  ["n/a", "n/a", "n/a"]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                        , "line":28
+                      }
+                    ]
+                  ]
+                  , "details":
+                  [
+                    {
+                      "type":"brief"
+                      , "text":"Unrolled by #pragma unroll"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"Unrolled by #pragma unroll"
+                    }
+                  ]
+                  , "children":
+                  [
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: conv2d3x3"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+            , "line":54
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"conv2d3x3.B1"
+          , "data":
+          ["Yes", "22604416", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":62
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":62
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 218"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 218"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Coalesced loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":64
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Auto-coalesced"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"conv2d3x3.B2"
+              , "data":
+              ["No", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":70
+                  }
+                ]
+                , [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":70
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 198"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 198"
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"Coalesced loop"
+                  , "data":
+                  ["n/a", "n/a", "n/a"]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                        , "line":72
+                      }
+                    ]
+                  ]
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Auto-coalesced"
+                    }
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Fully unrolled loop"
+                      , "data":
+                      ["n/a", "n/a", "n/a"]
+                      , "debug":
+                      [
+                        [
+                          {
+                            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                            , "line":77
+                          }
+                        ]
+                      ]
+                      , "details":
+                      [
+                        {
+                          "type":"brief"
+                          , "text":"Unrolled by #pragma unroll"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Unrolled by #pragma unroll"
+                        }
+                      ]
+                      , "children":
+                      [
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: conv2d1x1"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+            , "line":104
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"conv2d1x1.B1"
+          , "data":
+          ["Yes", "81133568", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":115
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":115
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 208"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 208"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Coalesced loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":117
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Auto-coalesced"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"3X Partially unrolled conv2d1x1.B2"
+              , "data":
+              ["No", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":122
+                  }
+                ]
+                , [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":122
+                  }
+                ]
+                , [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":125
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 197"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 197"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: avgpool2d"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+            , "line":141
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"avgpool2d.B1"
+          , "data":
+          ["Yes", "1528835104", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":146
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":146
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":149
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 157"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 157"
+            }
+          ]
+          , "children":
+          [
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: fc"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+            , "line":162
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"fc.B1"
+          , "data":
+          ["Yes", "81134252", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":166
+              }
+            ]
+            , [
+              {
+                "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                , "line":166
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 206"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 206"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Coalesced loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"c:/gesturenet/pyopencl/gesturenet.cl"
+                    , "line":167
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Auto-coalesced"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

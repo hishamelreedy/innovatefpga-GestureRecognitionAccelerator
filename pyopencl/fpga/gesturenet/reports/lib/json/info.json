@@ -1,0 +1,8 @@
+{"name":"Info","rows":[
+{"name":"Project Name","data":["gesturenet"],"classes":["info-table"]},
+{"name":"Target Family, Device, Board","data":["Cyclone V, 5CSXFC6D6F31C8ES, c5soc:c5soc"]},
+{"name":"AOC Version","data":["18.1.0 Build 625"]},
+{"name":"Quartus Version","data":["18.1.0 Build 625"]},
+{"name":"Command","data":["aoc -v gesturenet.cl -o fpga\\gesturenet.aocx"]},
+{"name":"Reports Generated At", "data":["Sat Mar 12 13:30:07 2022"]}
+]}

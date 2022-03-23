@@ -1,0 +1,822 @@
+<KERNEL_LIST>
+	<PROGRAM_GLOBAL_MEM_SIZE value="0" />
+	<KERNEL_BUNDLE name="avgpool2d" compute_units="1">
+	<KERNEL name="avgpool2d" filename="kernel_hdl/avgpool2d/avgpool2d_function_wrapper.vhd" version="1" cosim_name="avgpool2d" enable_global_profiling="1" workgroup_invariant="1" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" arbitration_latency="7" kernel_side_mem_latency="16">
+		<RESOURCE_INFO>
+			<ID value="3" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE value="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="" width="64" size="128" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library_package.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_function_wrapper.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_function.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B1_sr_0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B1_sr_1.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B2_sr_0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B0_branch.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B0_merge.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B0_stall_region.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B0_merge_reg.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_c0_entry_avgpool2d_c0_enter_avgpool2d.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_entry_avgpool2d_c0_exit_avgpool2d9.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_entry_avgpool2d_c0_exiA0Zol2d27_data_fifo.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_entry_avgpool2d_c0_exiA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_logic_c0_entry_avgpool2d_c0_enter_avgpool2d0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_syncbuf_sizex_sync_buffer_avgpool2d2.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_syncbuf_sizey_sync_buffer_avgpool2d4.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B1.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B1_branch.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B1_merge.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B1_stall_region.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B1_merge_reg.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_c0_for_body_avgpool2d_c0_enter3_avgpool2d.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_body_avgpool2d_c0_A0Zxit6_avgpool2d18.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_body_avgpool2d_c0_A0Zol2d29_data_fifo.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_body_avgpool2d_c0_A0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_logic_c0_for_body_avgpool2d_c0_enter3_avgpool2d16.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_body_aA0Zo00rf00d06of5q0u.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_load_unnamed_avgpool2d0_avgpool2d14.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/readdata_reg_unnamed_avgpool2d0_avgpool2d0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_syncbuf_input_im_sync_buffer_avgpool2d10.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B2.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B2_branch.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_B2_merge.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/bb_avgpool2d_B2_stall_region.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_c0_for_end_loopexit_avgpool2d_c0_eA0Znter10_avgpool2d.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_end_loopexit_avgpoA0Zit14_avgpool2d21.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_end_loopexit_avgpoA0Zol2d31_data_fifo.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_acl_sfc_exit_c0_for_end_loopexit_avgpoA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_sfc_logic_c0_for_end_loopexit_avgpool2A0Zer10_avgpool2d19.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA0Zck26742c246j2x65.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA0Z0cp36cd0oq3cdj6z.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA0ZinvTables_lutmem.hex" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA1ZinvTables_lutmem.hex" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA2ZinvTables_lutmem.hex" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA3ZinvTables_lutmem.hex" />
+			<FILE name="kernel_hdl/avgpool2d/floatComponent_i_sfc_logic_c0_for_end_loA4ZinvTables_lutmem.hex" />
+			<FILE name="kernel_hdl/avgpool2d/i_store_unnamed_avgpool2d1_avgpool2d25.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/i_syncbuf_output_im_sync_buffer_avgpool2d22.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/loop_limiter_avgpool2d0.vhd" />
+			<FILE name="kernel_hdl/avgpool2d/avgpool2d_function_cra_slave.vhd" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="unnamed_avgpool2d0" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1048576" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_avgpool2d1" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="write" criticality="1024" buffer_location="" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="sizex" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="sizey" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="output_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="R" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<KERNEL_BUNDLE name="conv2d1x1" compute_units="1">
+	<KERNEL name="conv2d1x1" filename="kernel_hdl/conv2d1x1/conv2d1x1_function_wrapper.vhd" version="1" cosim_name="conv2d1x1" enable_global_profiling="1" workgroup_invariant="1" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" arbitration_latency="7" kernel_side_mem_latency="16">
+		<RESOURCE_INFO>
+			<ID value="2" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE value="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="" width="64" size="256" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library_package.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_function_wrapper.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_function.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B1_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B1_sr_1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B2.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B2_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B2_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B2_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_load_memcoalesce_filter_weight_load_0_conv2d1x174.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/readdata_reg_memcoalesce_filter_weight_lA0Zoad_0_conv2d1x14.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c0_for_body14_conv2d1x1_c0_enter24_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_conv2d1x1_cA0Zit27_conv2d1x131.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_conv2d1x1_cA0Z1x1114_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_conv2d1x1_cA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c0_for_body14_conv2d1x1_c0_eA0Zer24_conv2d1x122.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_im_sync_buffer_conv2d1x128.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer9_conv2d1x126.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer15_conv2d1x124.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c1_for_body14_conv2d1x1_c1_enter30_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_for_body14_conv2d1x1_cA0Zit33_conv2d1x166.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_for_body14_conv2d1x1_cA0Z1x1116_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_for_body14_conv2d1x1_cA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c1_for_body14_conv2d1x1_c1_eA0Zer30_conv2d1x132.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer4_conv2d1x143.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer5_conv2d1x146.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer6_conv2d1x163.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer_conv2d1x134.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_im_sync_buffer21_conv2d1x153.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_im_sync_buffer22_conv2d1x160.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer11_conv2d1x151.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer12_conv2d1x158.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer_conv2d1x137.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer17_conv2d1x149.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer18_conv2d1x156.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer_conv2d1x140.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c2_for_body14_conv2d1x1_c2_enter_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c2_for_body14_conv2d1x1_cA0Zexit_conv2d1x178.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c2_for_body14_conv2d1x1_cA0Z1x1118_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c2_for_body14_conv2d1x1_cA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c2_for_body14_conv2d1x1_c2_eA0Znter_conv2d1x176.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/floatComponent_i_sfc_logic_c2_for_body14A0Zo00rf00d06of5q0u.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/floatComponent_i_sfc_logic_c2_for_body14A0Z303d06o00rf01pzc.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_load_unnamed_conv2d1x13_conv2d1x167.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/readdata_reg_unnamed_conv2d1x13_conv2d1x11.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_load_unnamed_conv2d1x14_conv2d1x169.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/readdata_reg_unnamed_conv2d1x14_conv2d1x12.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_load_unnamed_conv2d1x15_conv2d1x171.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/readdata_reg_unnamed_conv2d1x15_conv2d1x13.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_filter_weight_sync_buffer_conv2d1x120.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B2_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B2_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B2_sr_1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B3_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B4.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B4_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B4_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c0_for_body14_unifiedlatchblock_swA0Znter38_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_unifiedlatcA0Zit43_conv2d1x184.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_unifiedlatcA0Z1x1120_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_for_body14_unifiedlatcA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c0_for_body14_unifiedlatchblA0Zer38_conv2d1x179.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer7_conv2d1x181.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_store_unnamed_conv2d1x17_conv2d1x196.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer10_conv2d1x194.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer13_conv2d1x190.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer16_conv2d1x186.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer19_conv2d1x188.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer20_conv2d1x192.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B4_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B4_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B0.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B0_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B0_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c0_entry_conv2d1x1_c0_enter_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_entry_conv2d1x1_c0_exit_conv2d1x14.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_entry_conv2d1x1_c0_exiA0Z1x1110_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c0_entry_conv2d1x1_c0_exiA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c0_entry_conv2d1x1_c0_enter_conv2d1x10.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_channels_sync_buffer3_conv2d1x12.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_c1_entry_conv2d1x1_c1_enter_conv2d1x1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_entry_conv2d1x1_c1_exit_conv2d1x116.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_entry_conv2d1x1_c1_exiA0Z1x1112_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_acl_sfc_exit_c1_entry_conv2d1x1_c1_exiA0Zx1_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_sfc_logic_c1_entry_conv2d1x1_c1_enter_conv2d1x17.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_x_sync_buffer8_conv2d1x19.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_input_size_y_sync_buffer14_conv2d1x111.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_output_im_sync_buffer_conv2d1x113.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_load_unnamed_conv2d1x10_conv2d1x118.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/readdata_reg_unnamed_conv2d1x10_conv2d1x10.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/i_syncbuf_filter_bias_sync_buffer_conv2d1x15.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B0_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B0_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B1.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B1_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B1_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B1_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B1_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B3.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/bb_conv2d1x1_B3_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B3_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_B3_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/loop_limiter_conv2d1x10.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/loop_limiter_conv2d1x11.vhd" />
+			<FILE name="kernel_hdl/conv2d1x1/conv2d1x1_function_cra_slave.vhd" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="memcoalesce_filter_weight_load_0" cosim_name="" type="master" width="256" true_lsu_width="128" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d1x10" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1024" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d1x13" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d1x14" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d1x15" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d1x17" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="write" criticality="1048576" buffer_location="" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="input_channels" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_size_x" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_size_y" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_weight" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="C" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_bias" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="C" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="output_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="R" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<KERNEL_BUNDLE name="conv2d3x3" compute_units="1">
+	<KERNEL name="conv2d3x3" filename="kernel_hdl/conv2d3x3/conv2d3x3_function_wrapper.vhd" version="1" cosim_name="conv2d3x3" enable_global_profiling="1" workgroup_invariant="1" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" arbitration_latency="7" kernel_side_mem_latency="16">
+		<RESOURCE_INFO>
+			<ID value="1" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE value="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="" width="64" size="256" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library_package.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_function_wrapper.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_function.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B1_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B1_sr_1.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B2.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B2_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B2_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B2_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_load_memcoalesce_filter_weight_load_0_conv2d3x385.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/readdata_reg_memcoalesce_filter_weight_lA0Zoad_0_conv2d3x32.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_load_memcoalesce_input_im_load_0_conv2d3x382.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/readdata_reg_memcoalesce_input_im_load_0_conv2d3x31.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c0_for_cond17_preheader_conv2d3x3_A0Zter220_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond17_preheader_cA0Zt223_conv2d3x381.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond17_preheader_cA0Z3x3125_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond17_preheader_cA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c0_for_cond17_preheader_convA0Zr220_conv2d3x356.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_channels_sync_buffer193_conv2d3x377.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_channels_sync_buffer_conv2d3x372.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_im_sync_buffer_conv2d3x366.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer196_conv2d3x358.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer197_conv2d3x364.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer_conv2d3x361.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer_conv2d3x369.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c1_for_cond17_preheader_conv2d3x3_A0Zter226_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond17_preheader_cA0Zt229_conv2d3x389.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond17_preheader_cA0Z3x3127_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond17_preheader_cA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c1_for_cond17_preheader_convA0Zr226_conv2d3x387.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/floatComponent_i_sfc_logic_c1_for_cond17A0Zcd0oq3cd06oq3cz0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/floatComponent_i_sfc_logic_c1_for_cond17A0Z0cp36cd0oq3cdj6z.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_filter_weight_sync_buffer_conv2d3x350.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B2_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B2_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B2_sr_1.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B3_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B3_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c0_for_end69_loopexit_loopexit_conA0Zter238_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_end69_loopexit_looA0Z253_conv2d3x3114.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_end69_loopexit_looA0Z3x3129_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_end69_loopexit_looA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c0_for_end69_loopexit_loopexA0Zr238_conv2d3x390.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_channels_sync_buffer194_conv2d3x395.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer203_conv2d3x3100.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer204_conv2d3x3110.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer205_conv2d3x392.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer206_conv2d3x3104.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_store_unnamed_conv2d3x35_conv2d3x3115.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B3_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B3_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B4_sr_0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B0.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B0_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B0_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c0_entry_conv2d3x3_c0_enter_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_entry_conv2d3x3_c0_exit_conv2d3x38.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_entry_conv2d3x3_c0_exiA0Z3x3117_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_entry_conv2d3x3_c0_exiA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c0_entry_conv2d3x3_c0_enter_conv2d3x30.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_channels_sync_buffer191_conv2d3x36.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_channels_sync_buffer192_conv2d3x32.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c1_entry_conv2d3x3_c1_enter_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_entry_conv2d3x3_c1_exit_conv2d3x320.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_entry_conv2d3x3_c1_exiA0Z3x3119_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_entry_conv2d3x3_c1_exiA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c1_entry_conv2d3x3_c1_enter_conv2d3x311.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_im_sync_buffer_conv2d3x317.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_output_size_sync_buffer202_conv2d3x313.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_start_channel_sync_buffer_conv2d3x315.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_load_unnamed_conv2d3x30_conv2d3x322.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/readdata_reg_unnamed_conv2d3x30_conv2d3x30.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_filter_bias_sync_buffer_conv2d3x39.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B0_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B0_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B1.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B1_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B1_merge_reg.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c0_for_cond12_preheader_lr_ph_convA0Zter208_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond12_preheader_lA0Zt211_conv2d3x330.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond12_preheader_lA0Z3x3121_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c0_for_cond12_preheader_lA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c0_for_cond12_preheader_lr_pA0Zr208_conv2d3x324.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_pad_sync_buffer_conv2d3x328.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_stride_sync_buffer_conv2d3x326.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_c1_for_cond12_preheader_lr_ph_convA0Zter214_conv2d3x3.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond12_preheader_lA0Zt217_conv2d3x349.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond12_preheader_lA0Z3x3123_data_fifo.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_acl_sfc_exit_c1_for_cond12_preheader_lA0Zx3_full_detector.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_sfc_logic_c1_for_cond12_preheader_lr_pA0Zr214_conv2d3x331.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer195_conv2d3x338.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer198_conv2d3x342.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_input_size_sync_buffer199_conv2d3x346.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_pad_sync_buffer200_conv2d3x335.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/i_syncbuf_stride_sync_buffer201_conv2d3x333.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B1_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B1_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B4.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/bb_conv2d3x3_B4_stall_region.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B4_branch.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_B4_merge.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/loop_limiter_conv2d3x30.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/loop_limiter_conv2d3x31.vhd" />
+			<FILE name="kernel_hdl/conv2d3x3/conv2d3x3_function_cra_slave.vhd" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="memcoalesce_filter_weight_load_0" cosim_name="" type="master" width="256" true_lsu_width="128" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="memcoalesce_input_im_load_0" cosim_name="" type="master" width="256" true_lsu_width="128" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d3x30" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1024" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_conv2d3x35" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="write" criticality="1048576" buffer_location="" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="input_channels" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_size" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="pad" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="stride" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="start_channel" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="output_size" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_weight" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="C" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_bias" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="C" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="output_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="R" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<KERNEL_BUNDLE name="fc" compute_units="1">
+	<KERNEL name="fc" filename="kernel_hdl/fc/fc_function_wrapper.vhd" version="1" cosim_name="fc" enable_global_profiling="1" workgroup_invariant="1" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" arbitration_latency="7" kernel_side_mem_latency="16">
+		<RESOURCE_INFO>
+			<ID value="4" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE value="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="" width="64" size="256" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library_package.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/fc/fc_function_wrapper.vhd" />
+			<FILE name="kernel_hdl/fc/fc_function.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B1_sr_0.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B1_sr_1.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B2_sr_0.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B0.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B0_stall_region.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B0_merge_reg.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_c0_entry_fc_c0_enter_fc.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_entry_fc_c0_exit_fc6.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_entry_fc_c0_exit_fc55_data_fifo.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_entry_fc_c0_exit_fc_full_detector.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_logic_c0_entry_fc_c0_enter_fc0.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizex_sync_buffer1_fc2.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizey_sync_buffer_fc4.vhd" />
+			<FILE name="kernel_hdl/fc/i_load_unnamed_fc0_fc10.vhd" />
+			<FILE name="kernel_hdl/fc/readdata_reg_unnamed_fc0_fc0.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_filter_bias_sync_buffer_fc7.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B0_branch.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B0_merge.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B1.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B1_stall_region.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B1_merge_reg.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_c0_for_cond5_preheader_fc_c0_enter8_fc.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_cond5_preheader_fc_c0_exit11_fc30.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_cond5_preheader_fcA0Z1_fc57_data_fifo.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_cond5_preheader_fcA0Zfc_full_detector.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_logic_c0_for_cond5_preheader_fc_c0_enter8_fc20.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_filter_weight_sync_buffer_fc24.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_input_im_sync_buffer_fc27.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizex_sync_buffer2_fc22.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_c1_for_cond5_preheader_fc_c1_enter_fc.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c1_for_cond5_preheader_fc_c1_exit_fc43.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c1_for_cond5_preheader_fcA0Zt_fc59_data_fifo.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c1_for_cond5_preheader_fcA0Zfc_full_detector.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_logic_c1_for_cond5_preheader_fc_c1_enter_fc41.vhd" />
+			<FILE name="kernel_hdl/fc/floatComponent_i_sfc_logic_c1_for_cond5_A0Zcd0oq3cd06oq3cz0.vhd" />
+			<FILE name="kernel_hdl/fc/floatComponent_i_sfc_logic_c1_for_cond5_A0Z0cp36cd0oq3cdj6z.vhd" />
+			<FILE name="kernel_hdl/fc/i_load_unnamed_fc2_fc36.vhd" />
+			<FILE name="kernel_hdl/fc/readdata_reg_unnamed_fc2_fc1.vhd" />
+			<FILE name="kernel_hdl/fc/i_load_unnamed_fc3_fc38.vhd" />
+			<FILE name="kernel_hdl/fc/readdata_reg_unnamed_fc3_fc2.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizex_sync_buffer3_fc18.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizex_sync_buffer_fc14.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizey_sync_buffer5_fc16.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizey_sync_buffer6_fc12.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B1_branch.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B1_merge.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B2.vhd" />
+			<FILE name="kernel_hdl/fc/bb_fc_B2_stall_region.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_c0_for_end20_loopexit_loopexit_fc_c0_enter15_fc.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_end20_loopexit_looA0Zc_c0_exit19_fc49.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_end20_loopexit_looA0Z9_fc61_data_fifo.vhd" />
+			<FILE name="kernel_hdl/fc/i_acl_sfc_exit_c0_for_end20_loopexit_looA0Zfc_full_detector.vhd" />
+			<FILE name="kernel_hdl/fc/i_sfc_logic_c0_for_end20_loopexit_loopexA0Z_c0_enter15_fc44.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_sizex_sync_buffer4_fc46.vhd" />
+			<FILE name="kernel_hdl/fc/i_store_unnamed_fc5_fc53.vhd" />
+			<FILE name="kernel_hdl/fc/i_syncbuf_output_im_sync_buffer_fc50.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B2_branch.vhd" />
+			<FILE name="kernel_hdl/fc/fc_B2_merge.vhd" />
+			<FILE name="kernel_hdl/fc/loop_limiter_fc0.vhd" />
+			<FILE name="kernel_hdl/fc/fc_function_cra_slave.vhd" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="unnamed_fc0" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1024" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_fc2" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1048576" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_fc3" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1048576" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_fc5" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="write" criticality="1024" buffer_location="" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="sizex" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="sizey" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_weight" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="filter_bias" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="output_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="R" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<KERNEL_BUNDLE name="maxpool2d" compute_units="1">
+	<KERNEL name="maxpool2d" filename="kernel_hdl/maxpool2d/maxpool2d_function_wrapper.vhd" version="1" cosim_name="maxpool2d" enable_global_profiling="1" workgroup_invariant="1" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" arbitration_latency="7" kernel_side_mem_latency="16">
+		<RESOURCE_INFO>
+			<ID value="0" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE value="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="" width="64" size="128" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library_package.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/windows64/lib/dspba/Libraries/vhdl/base/dspba_library.vhd" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_function_wrapper.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_function.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B1_sr_0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B1_sr_1.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B2_sr_0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B2_sr_1.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B3_sr_0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B4_sr_0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B0_stall_region.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_c0_entry_maxpool2d_c0_enter_maxpool2d.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_entry_maxpool2d_c0_exit_maxpool2d4.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_entry_maxpool2d_c0_exiA0Zol2d50_data_fifo.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_entry_maxpool2d_c0_exiA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_logic_c0_entry_maxpool2d_c0_enter_maxpool2d0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_input_size_sync_buffer_maxpool2d2.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_c1_entry_maxpool2d_c1_enter_maxpool2d.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_entry_maxpool2d_c1_exit_maxpool2d12.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_entry_maxpool2d_c1_exiA0Zol2d52_data_fifo.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_entry_maxpool2d_c1_exiA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_logic_c1_entry_maxpool2d_c1_enter_maxpool2d5.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_im_sync_buffer_maxpool2d9.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_size_sync_buffer_maxpool2d7.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B0_merge_reg.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B0_branch.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B0_merge.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B1.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B1_stall_region.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B1_merge_reg.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B1_branch.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B1_merge.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B2.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B2_stall_region.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_load_memcoalesce_input_im_load_0_maxpool2d27.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/readdata_reg_memcoalesce_input_im_load_0_maxpool2d0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_c0_for_cond17_preheader_maxpool2d_A0Zenter7_maxpool2d.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_for_cond17_preheader_mA0Zit10_maxpool2d25.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_for_cond17_preheader_mA0Zol2d54_data_fifo.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c0_for_cond17_preheader_mA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_logic_c0_for_cond17_preheader_maxpA0Zter7_maxpool2d18.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_input_im_sync_buffer_maxpool2d22.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_input_size_sync_buffer1_maxpool2d20.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_c1_for_cond17_preheader_maxpool2d_A0Znter13_maxpool2d.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_for_cond17_preheader_mA0Zit16_maxpool2d32.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_for_cond17_preheader_mA0Zol2d56_data_fifo.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_acl_sfc_exit_c1_for_cond17_preheader_mA0Z2d_full_detector.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_sfc_logic_c1_for_cond17_preheader_maxpA0Zer13_maxpool2d30.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B2_merge_reg.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_size_sync_buffer4_maxpool2d15.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B2_branch.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B2_merge.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B3.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B3_stall_region.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_store_unnamed_maxpool2d1_maxpool2d33.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_size_sync_buffer2_maxpool2d36.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_size_sync_buffer3_maxpool2d46.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/i_syncbuf_output_size_sync_buffer5_maxpool2d40.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B3_branch.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B3_merge.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B4.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/bb_maxpool2d_B4_stall_region.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B4_branch.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_B4_merge.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/loop_limiter_maxpool2d0.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/loop_limiter_maxpool2d1.vhd" />
+			<FILE name="kernel_hdl/maxpool2d/maxpool2d_function_cra_slave.vhd" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="memcoalesce_input_im_load_0" cosim_name="" type="master" width="256" true_lsu_width="128" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="read" criticality="1073741824" buffer_location="" group_id="0" />
+			<INTERFACE port="unnamed_maxpool2d1" cosim_name="" type="master" width="256" true_lsu_width="32" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="1" optype="write" criticality="1048576" buffer_location="" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="input_size" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="output_size" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="input_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="ARG_TYPE_NONE" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+			<ARGUMENT name="output_im" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="R" access_qualifier="ARG_ACCESS_NONE" type_name="float*" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<STRUCT_TYPE_DEFS>
+	</STRUCT_TYPE_DEFS>
+</KERNEL_LIST>

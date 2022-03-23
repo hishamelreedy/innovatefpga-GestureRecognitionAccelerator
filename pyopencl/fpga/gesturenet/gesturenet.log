@@ -1,0 +1,54 @@
+Compiler Command: aoc -v gesturenet.cl -o fpga\gesturenet.aocx
+c:/gesturenet/pyopencl/gesturenet.cl:7:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float *input_im,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:49:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float* input_im,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:50:24: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global const float* filter_weight,
+                              ^
+c:/gesturenet/pyopencl/gesturenet.cl:51:24: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global const float* filter_bias,
+                              ^
+c:/gesturenet/pyopencl/gesturenet.cl:100:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float *input_im,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:101:24: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global const float* filter_weight,
+                              ^
+c:/gesturenet/pyopencl/gesturenet.cl:102:24: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global const float* filter_bias,
+                              ^
+c:/gesturenet/pyopencl/gesturenet.cl:139:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float* input_im,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:158:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float* input_im,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:159:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float* filter_weight,
+                        ^
+c:/gesturenet/pyopencl/gesturenet.cl:160:18: warning: declaring kernel argument with no 'restrict' may lead to low kernel performance
+        __global float* filter_bias,
+                        ^
+11 warnings generated.
+
+!===========================================================================
+! The report below may be inaccurate. A more comprehensive           
+! resource usage report can be found at gesturenet/reports/report.html    
+!===========================================================================
+
++--------------------------------------------------------------------+
+; Estimated Resource Usage Summary                                   ;
++----------------------------------------+---------------------------+
+; Resource                               + Usage                     ;
++----------------------------------------+---------------------------+
+; Logic utilization                      ;   92%                     ;
+; ALUTs                                  ;   61%                     ;
+; Dedicated logic registers              ;   37%                     ;
+; Memory blocks                          ;  100%                     ;
+; DSP blocks                             ;   56%                     ;
++----------------------------------------+---------------------------;
+System name: gesturenet
+

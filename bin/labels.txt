@@ -1,0 +1,11 @@
+0_pinch_index
+10_palm_hold
+1_palm_tilt
+2_finger_slider
+3_pinch_pinky
+4_slow_swipe
+5_fast_swipe
+6_push
+7_pull
+8_finger_rub
+9_circle

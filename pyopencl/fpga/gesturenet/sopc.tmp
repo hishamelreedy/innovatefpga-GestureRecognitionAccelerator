@@ -1,0 +1,2 @@
+2022.03.12.13:30:08 Info: Doing: <b>qsys-script --quartus-project=top --script=system.tcl --Xmx512M --XX:+UseSerialGC --system-file=system.qsys</b>
+Terminating on signal SIGINT(2)
