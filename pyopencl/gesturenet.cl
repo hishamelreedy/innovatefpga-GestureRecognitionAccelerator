@@ -153,21 +153,22 @@ __kernel void avgpool2d(
 
 // Fully Connected layer
 __kernel void fc(
-	const int sizex,
-	const int sizey,
+	const int size,
+	const int relu,
 	__global float* input_im,
 	__global float* filter_weight,
 	__global float* filter_bias,
 	__global float *restrict output_im)
 {
 	int filter_index = get_global_id(0);
-	filter_weight += filter_index * sizex * sizey;
 	float tmp = filter_bias[filter_index];
-	for(int i=0; i<sizex; i++){
-		for(int j=0; j<sizey; j++){
-			tmp += filter_weight[i*sizex+j] * input_im[i*sizex+j];
-		}
+	for(int i=0; i<size; i++){
+		tmp += filter_weight[filter_index*size+i] * input_im[i];
 	}
 	// Relu
-	output_im[filter_index] = (tmp > 0.0) ? tmp : 0.0;
+	if (relu == 1){
+		output_im[filter_index] = (tmp > 0.0) ? tmp : 0.0;
+	}else{
+		output_im[filter_index] = tmp;
+	}
 }
